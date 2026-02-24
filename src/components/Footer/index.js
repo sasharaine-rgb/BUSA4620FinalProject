@@ -1,7 +1,15 @@
 export default function Footer() {
   return (
-    <div>
-      <h1>footer</h1>
-    </div>
+    <footer className="footer">
+      <div className="footerInner">
+        <div className="footerBrand">Banff Hikes</div>
+        <nav className="footerNav" aria-label="Footer">
+          <a href="/" className="footerLink">Home</a>
+          <a href="/browse-hikes" className="footerLink">Browse Hikes</a>
+          <a href="/contact" className="footerLink">Contact</a>
+        </nav>
+        <div className="footerCopy">&copy; {new Date().getFullYear()} Banff Hikes. All rights reserved.</div>
+      </div>
+    </footer>
   );
 }
