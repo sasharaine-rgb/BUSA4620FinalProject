@@ -25,8 +25,8 @@ export default function HardHikesPage() {
       <div className="cineWrap">
         <section className="cineHero" aria-label="Hard hikes hero">
           <div
-            className="cineHeroImg"
-            style={{ backgroundImage: `url(/images/northernlights.jpeg)` }}
+            className="cineHeroImg cineHeroImgHard"
+            style={{ backgroundImage: `url(/images/rainbow-banff.jpeg)` }}
           />
           <div className="cineHeroShade" />
           <div className="cineHeroFade" />
@@ -51,9 +51,13 @@ export default function HardHikesPage() {
             <p className="cineHint">Earn the summit.</p>
           </div>
 
-          {featured ? (
-            featured.slug === 'tent-ridge-kananaskis' ? (
-              <Link href="/tent-ridge-hike" className="featureCard" style={{ textDecoration: 'none', color: 'inherit' }}>
+          {featured ? (() => {
+            let customHref = null;
+            if (featured.slug === 'tent-ridge-kananaskis') customHref = '/tent-ridge-hike';
+            if (featured.slug === 'smutwood-peak') customHref = '/smutwood-hike';
+            if (featured.slug === 'cascade-amphitheatre') customHref = '/cascade-hike';
+            return customHref ? (
+              <Link href={customHref} className="featureCard" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="featureImg" style={{ backgroundImage: `url(${featured.image})` }} />
                 <div className="featureBody">
                   <h3 className="featureTitle">{featured.name}</h3>
@@ -80,8 +84,8 @@ export default function HardHikesPage() {
                   <p className="featureNote">{featured.summary}</p>
                 </div>
               </div>
-            )
-          ) : null}
+            );
+          })() : null}
 
           <div className="cineSectionHeader" style={{ marginTop: 18 }}>
             <h2 className="cineH2">More hard picks</h2>

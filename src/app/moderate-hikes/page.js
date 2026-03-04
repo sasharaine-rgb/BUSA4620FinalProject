@@ -26,7 +26,7 @@ export default function ModerateHikesPage() {
         <section className="cineHero" aria-label="Moderate hikes hero">
           <div
             className="cineHeroImg"
-            style={{ backgroundImage: `url(/images/golfcourse.jpeg)` }}
+            style={{ backgroundImage: `url(/images/peyto-lake.jpeg)` }}
           />
           <div className="cineHeroShade" />
           <div className="cineHeroFade" />
@@ -93,7 +93,7 @@ export default function ModerateHikesPage() {
               // Custom page links for new moderate hikes
               let customHref = null;
               if (h.slug === 'sunshine-village') customHref = '/sunshine-village-hike';
-              if (h.slug === 'plain-of-six-glaciers') customHref = '/plain-of-six-glaciers-hike';
+              if (h.slug === 'sentinel-pass') customHref = '/sentinel-pass-hike';
               if (h.slug === 'c-level-cirque') customHref = '/c-level-cirque';
               if (h.slug === 'cascade-hike') customHref = '/cascade-hike';
               return customHref ? (

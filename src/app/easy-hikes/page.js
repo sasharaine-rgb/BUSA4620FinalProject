@@ -9,7 +9,7 @@ export default function EasyHikesPage() {
   const featured = hikes.find((h) => h.slug === "tunnel-mountain") || (hikes.length > 0 ? hikes[0] : null);
   const rest = hikes.filter((h) => h.slug !== featured?.slug);
 
-  const heroImage = "/images/emerald-lake.jpeg";
+  const heroImage = "/images/norquay.jpeg";
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -30,9 +30,7 @@ export default function EasyHikesPage() {
           <div
             className="cineHeroImg"
             style={{ backgroundImage: `url(${heroImage})` }}
-          >
-            <span className="heroTag">Emerald Lake - Yoho National Park</span>
-          </div>
+          />
           <div className="cineHeroShade" />
           <div className="cineHeroFade" />
 
