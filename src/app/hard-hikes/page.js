@@ -97,14 +97,9 @@ export default function HardHikesPage() {
               if (h.slug === 'cascade-amphitheatre') customHref = '/cascade-hike';
               return customHref ? (
                 <Link key={h.slug} href={customHref} className={`pickCard${h.slug === 'tent-ridge-kananaskis' ? ' highlight' : ''}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <div className="pickImg" style={{ backgroundImage: `url(${h.image})` }}>
-                    {h.slug === 'tent-ridge-kananaskis' && (
-                      <div className="pickImgOverlay">
-                        <h3 className="pickTitleOverlay">{h.name}</h3>
-                      </div>
-                    )}
-                  </div>
+                  <div className="pickImg" style={{ backgroundImage: `url(${h.image})` }} />
                   <div className="pickBody">
+                    <h3 className="pickTitle">{h.name}</h3>
                     <div className="metaRow">
                       <span className="metaPill">{h.distanceKm} km</span>
                       <span className="metaPill">{h.elevationM} m</span>

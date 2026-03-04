@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -7,48 +6,55 @@ export default function ContactPage() {
     <main className="contactPage">
       <section className="contactHero" aria-label="Contact Banff Hikes">
         <div className="contactWrap">
-          <Link className="contactBack" href="/">← Back home</Link>
-
-          <h1 className="contactTitle">Contact</h1>
+          <Link className="contactBack" href="/">
+            ← Back home
+          </Link>
+          <h1 className="contactTitle">Get in Touch</h1>
           <p className="contactSub">
-            Questions, trail suggestions, or a hike you think should be featured? Send it through.
+            Trail suggestions, questions, or a hike you think should be featured? Send it through.
           </p>
-
           <form
-  className="contactCard"
-  onSubmit={(e) => {
-    e.preventDefault();
-    alert("Thanks! (This form is a demo — I can connect it to email next.)");
-  }}
->
-
+            className="contactCard"
+            onSubmit={(e) => {
+              e.preventDefault();
+              alert("Thanks for reaching out!");
+            }}
+          >
             <label className="contactLabel">
               Your name
-              <input className="contactInput" type="text" name="name" placeholder="" required />
+              <input
+                className="contactInput"
+                type="text"
+                name="name"
+                placeholder="Jane Smith"
+                required
+              />
             </label>
-
             <label className="contactLabel">
-              Email
-              <input className="contactInput" type="email" name="email" placeholder="" required />
+              Email address
+              <input
+                className="contactInput"
+                type="email"
+                name="email"
+                placeholder="jane@example.com"
+                required
+              />
             </label>
-
             <label className="contactLabel">
               Message
               <textarea
                 className="contactTextarea"
                 name="message"
-                placeholder="Tell me what you’re looking for…"
-                rows={6}
+                placeholder="Tell me what you're looking for…"
+                rows={5}
                 required
               />
             </label>
-
             <button className="contactBtn" type="submit">
-              Send message
+              Send message →
             </button>
-
             <p className="contactFine">
-              
+              I'll get back to you within a couple of days.
             </p>
           </form>
         </div>
